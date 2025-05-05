@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <button id="back-btn" class="btn"><i class="fas fa-arrow-left"></i> Back</button>
+  <h1 id="plan-title">Plan Details</h1>
+</header>
+
+<main>
+  <div class="plan-controls">
+    <button id="start-plan" class="btn primary">
+      <i class="fas fa-play"></i> Start Plan
+    </button>
+    <button id="pause-plan" class="btn warning">
+      <i class="fas fa-pause"></i> Pause Plan
+    </button>
+    <button id="complete-plan" class="btn success">
+      <i class="fas fa-check"></i> Complete Plan
+    </button>
+    <button id="edit-plan-btn" class="btn">
+      <i class="fas fa-edit"></i> Edit
+    </button>
+  </div>
+
+  <div id="plan-info">
+    <div class="info-row">
+      <span class="label">Status:</span>
+      <span id="plan-status" class="status-badge"></span>
+    </div>
+    <div class="info-row">
+      <span class="label">Progress:</span>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div id="plan-progress-fill" class="progress-fill"></div>
+        </div>
+        <span id="plan-progress-text" class="progress-text">0%</span>
+      </div>
+    </div>
+    <div id="plan-description" class="description"></div>
+  </div>
+
+  <div class="section-header">
+    <h2>Goals</h2>
+    <button id="add-goal" class="btn primary small">
+      <i class="fas fa-plus"></i> Add Goal
+    </button>
+  </div>
+  <div id="goals-container"></div>
+</main>
+
+<div id="modal-container" class="modal-container">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3 id="modal-title">Modal Title</h3>
+    <div id="modal-body">Modal Content</div>
+    <div class="modal-actions">
+      <button id="modal-cancel" class="btn">Cancel</button>
+      <button id="modal-confirm" class="btn primary">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<template id="goal-card-template">
+  <div class="goal-card">
+    <div class="goal-header">
+      <h3 class="goal-title"></h3>
+      <div class="goal-actions">
+        <button class="btn edit-goal"><i class="fas fa-edit"></i></button>
+        <button class="btn delete-goal danger"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+    <div class="goal-progress">
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <span class="progress-text">0%</span>
+    </div>
+    <div class="goal-description"></div>
+    <button class="btn view-activities">
+      <i class="fas fa-chevron-down"></i> View Activities
+    </button>
+    <div class="activities-container" style="display: none;"></div>
+  </div>
+</template>
+
+<template id="activity-card-template">
+  <div class="activity-card">
+    <div class="activity-header">
+      <h4 class="activity-title"></h4>
+      <span class="status-badge"></span>
+    </div>
+    <p class="activity-description"></p>
+    <div class="activity-actions">
+      <!-- Buttons will be added dynamically based on state -->
+    </div>
+  </div>
+</template>
+
+<script src="js/api.js"></script>
+<script src="js/plan-detail.js"></script>
+</body>
+</html>

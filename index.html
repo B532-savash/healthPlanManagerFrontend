@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plan Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1><i class="fas fa-heartbeat"></i> Health Plan Manager</h1>
+    <button id="new-plan-btn" class="btn primary">
+        <i class="fas fa-plus"></i> New Plan
+    </button>
+</header>
+
+<main>
+    <div id="loading">
+        <div class="spinner"></div>
+        <p>Loading your health plans...</p>
+    </div>
+    <div id="plans-container" class="plans-grid"></div>
+</main>
+
+<div id="modal-container" class="modal-container">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 id="modal-title">Confirm Action</h3>
+        <div id="modal-body">Are you sure you want to perform this action?</div>
+        <div class="modal-actions">
+            <button id="modal-cancel" class="btn">Cancel</button>
+            <button id="modal-confirm" class="btn primary">Confirm</button>
+        </div>
+    </div>
+</div>
+
+<template id="plan-card-template">
+    <div class="plan-card">
+        <div class="plan-header">
+            <h2 class="plan-title"></h2>
+            <div class="plan-status">
+                <span class="status-badge"></span>
+            </div>
+        </div>
+        <div class="plan-progress">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <span class="progress-text">0%</span>
+        </div>
+        <div class="plan-meta">
+            <span class="goals-count"><i class="fas fa-bullseye"></i> <span>0</span> Goals</span>
+            <span class="activities-count"><i class="fas fa-tasks"></i> <span>0</span> Activities</span>
+        </div>
+        <div class="plan-actions">
+            <button class="btn view-details">View Details</button>
+            <button class="btn edit-plan"><i class="fas fa-edit"></i></button>
+            <button class="btn archive-plan"><i class="fas fa-archive"></i></button>
+            <button class="btn delete-plan danger"><i class="fas fa-trash"></i></button>
+        </div>
+    </div>
+</template>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
