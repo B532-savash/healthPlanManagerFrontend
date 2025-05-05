@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Goal • Health Plan Manager</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    const API_BASE = 'http://localhost:8080/api';
+  </script>
+</head>
+<body>
+<nav>
+  <a href="plans.html">Plans</a>
+</nav>
+<main>
+  <button class="back" id="back-to-plan">← Back to Plan</button>
+  <h1 id="goal-title">Goal Detail</h1>
+
+  <!-- Activities -->
+  <section>
+    <h2>Activities</h2>
+    <div id="acts-container" class="cards"></div>
+    <form id="act-form" class="form-inline">
+      <input type="hidden" id="act-id">
+
+      <select id="act-type" required>
+        <option value="">Select type</option>
+        <option value="DIET">Diet</option>
+        <option value="EXERCISE">Exercise</option>
+      </select>
+
+      <input type="text" id="act-name" placeholder="Activity name" required>
+      <button type="submit">Save Activity</button>
+      <button type="button" id="cancel-act" class="secondary hidden">Cancel</button>
+    </form>
+  </section>
+</main>
+<script src="goal.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Health Plan Manager • Plans</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Point this at your Spring Boot API
+    const API_BASE = 'http://localhost:8080/api';
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="plans.html">Plans</a>
+</nav>
+<main>
+  <h1>All Health Plans</h1>
+  <button id="refresh">↻ Refresh</button>
+
+  <table id="plans-table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h2 id="form-title">Add New Plan</h2>
+  <form id="plan-form" class="form-inline">
+    <input type="hidden" id="plan-id">
+    <input type="text" id="plan-name" placeholder="Name" required>
+    <input type="text" id="plan-desc" placeholder="Description">
+    <button type="submit">Save</button>
+    <button type="button" id="cancel" class="secondary hidden">Cancel</button>
+  </form>
+</main>
+<script src="plans.js"></script>
+</body>
+</html>

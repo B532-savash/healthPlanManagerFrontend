@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #1f2a44;
+  background: #fef3e0; /* Subtle pastel orange */
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+a {
+  color: #f97316; /* Orange for links */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #ea580c; /* Darker orange on hover */
+  text-decoration: underline;
+}
+
+/* Layout */
+nav {
+  margin-bottom: 2rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+nav a {
+  font-weight: 600;
+  margin-right: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Main content (for centering across pages) */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+main h1 {
+  margin-bottom: 1.5rem;
+}
+main p {
+  margin-bottom: 1.25rem;
+}
+
+/* Specific styling for Plans page */
+#refresh {
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#plans-table {
+  margin: 0 auto 2rem auto;
+  max-width: 100%;
+}
+#form-title {
+  margin-bottom: 1.25rem;
+}
+#plan-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+#plan-form input {
+  flex: 1 1 200px;
+}
+#plan-form button[type="submit"],
+#plan-form button[type="button"] {
+  margin-top: 0.5rem;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+.card small {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #6b7280;
+}
+
+/* Buttons */
+button, .button {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%); /* Orange gradient */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover, .button:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%); /* Darker orange gradient on hover */
+  transform: translateY(-2px);
+}
+button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  transform: none;
+}
+button.secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+button.secondary:hover {
+  background: #d1d5db;
+  transform: translateY(-2px);
+}
+
+/* Forms */
+.form-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.form-inline input,
+.form-inline select {
+  flex: 1 1 180px;
+  padding: 0.65rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-inline input:focus,
+.form-inline select:focus {
+  outline: none;
+  border-color: #f97316; /* Orange focus border */
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1); /* Orange focus ring */
+}
+
+/* Table (for plans list) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #111827;
+}
+tbody tr:hover {
+  background: #f1f5f9;
+}
+.actions button, .actions a {
+  margin-right: 0.75rem;
+}
+
+/* Headings & sections */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #111827;
+}
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
+.back {
+  background: none;
+  color: #f97316; /* Orange for back button */
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+}
+.back:hover {
+  color: #ea580c; /* Darker orange on hover */
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  nav a {
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+  .form-inline {
+    flex-direction: column;
+  }
+  .form-inline input,
+  .form-inline select {
+    flex: 1 1 100%;
+  }
+  table {
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 0.75rem;
+  }
+}

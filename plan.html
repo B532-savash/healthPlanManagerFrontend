@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Plan • Health Plan Manager</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    const API_BASE = 'http://localhost:8080/api';
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="plans.html">Plans</a>
+</nav>
+<main>
+  <button class="back" id="back-to-plans">← Back to Plans</button>
+  <h1 id="plan-title">Plan Detail</h1>
+
+  <!-- Plan edit & status -->
+  <form id="detail-form" class="form-inline">
+    <input type="hidden" id="plan-id">
+    <input type="text" id="plan-name" placeholder="Name" required>
+    <input type="text" id="plan-desc" placeholder="Description">
+    <button type="submit">Save Plan</button>
+  </form>
+  <div class="status-controls">
+    <button id="start-plan">Start</button>
+    <button id="pause-plan">Pause</button>
+    <button id="complete-plan">Complete</button>
+  </div>
+
+  <!-- Goals -->
+  <section>
+    <h2>Goals</h2>
+    <div id="goals-container" class="cards"></div>
+    <form id="goal-form" class="form-inline">
+      <input type="hidden" id="goal-id">
+      <input type="text"    id="goal-name"   placeholder="Goal name"   required>
+      <input type="number"  id="goal-target" placeholder="Target value" required>
+      <input type="text"    id="goal-unit"   placeholder="Unit (e.g. km)">
+      <button type="submit">Save Goal</button>
+      <button type="button" id="cancel-goal" class="secondary hidden">Cancel</button>
+    </form>
+  </section>
+</main>
+<script src="plan.js"></script>
+</body>
+</html>
