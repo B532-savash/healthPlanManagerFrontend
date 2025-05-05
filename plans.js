@@ -1,5 +1,5 @@
 (function() {
-  const API_BASE = 'http://localhost:8080/api';
+  const API_BASE = 'https://healthplanmanager.onrender.com/api';
 
   async function api(path, opts = {}) {
     const res = await fetch(API_BASE + path, {
